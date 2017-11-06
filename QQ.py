@@ -20,7 +20,7 @@ class MyFrame(wx.Frame):
               self.textAll = wx.TextCtrl(panel,
                                          -1,
                                          size = (480,200),
-                                         style = wx.TE_MULTILINE | wx.TE_READLINE
+                                         style = wx.TE_MULTILINE | wx.TE_READONLY
                                          )
 
               labelIn = wx.StaticText(panel,
@@ -54,14 +54,14 @@ class MyFrame(wx.Frame):
 
               btnSizer = wx.BoxSizer()
               btnSizer.Add(self.btnSent,proportion = 0)
-              btnSizer.Add(self.Clear,proportion = 0)
+              btnSizer.Add(self.btnClear,proportion = 0)
 
               mainSizer = wx.BoxSizer(wx.VERTICAL)
-              mainSizer.Add(labalAll,proportion = 0)
-              mainSizer.Add(self.textAll,proportion = 1)
-              mainSizer.Add(labalIn,proportion = 0)
-              mainSizer.Add(self.textIn,proportion = 0)
-              mainSizer.Add(btnSizer,proportion = 0)
+              mainSizer.Add(labelAll,proportion = 0,flag = wx.ALIGN_CENTER)
+              mainSizer.Add(self.textAll,proportion = 1,flag = wx.EXPAND)
+              mainSizer.Add(labelIn,proportion = 0,flag = wx.ALIGN_CENTER)
+              mainSizer.Add(self.textIn,proportion = 0,flag = wx.EXPAND)
+              mainSizer.Add(btnSizer,proportion = 0,flag = wx.ALIGN_CENTER)
 
               panel.SetSizer(mainSizer)
 
